@@ -251,9 +251,10 @@ with col3:
 
 st.title("Pronósticos de Largo Plazo")
 
-lp_s1 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s1.csv", sep=';')
-lp_s2 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s2.csv", sep=';')
-lp_s3 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s3.csv", sep=';')
+lp_s1 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s1.csv", sep=';', dtype=dtype_dict, thousands=',')
+lp_s2 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s2.csv", sep=';', dtype=dtype_dict, thousands=',')
+lp_s3 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/lp_s3.csv", sep=';', dtype=dtype_dict, thousands=',')
+
 
 lp_s1.set_index(lp_s1.Mes, inplace=True)
 lp_s2.set_index(lp_s2.Mes, inplace=True)
