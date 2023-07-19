@@ -264,9 +264,11 @@ lp_s3.set_index(lp_s3.Mes, inplace=True)
 combined_df = pd.concat([lp_s1[selected_column], lp_s2[selected_column], lp_s3[selected_column]], axis=1)
 combined_df.columns = ["Escenario Pesimista", "Escenario normal", "Escenario Optimista"]
 
-# Convertir el índice a tipo datetime
-combined_df.index = pd.to_datetime(combined_df.index)
 
+combined_df.index = combined_df.index.map(lambda fecha: meses_esp_ingles[fecha.split()[0]] + ' ' + fecha.split()[1])
+
+# Convertir el índice a tipo datetime
+combined_df.index = pd.to_datetime(combined_df.index, format='%b %Y')
 combined_df = combined_df.groupby(pd.DatetimeIndex(combined_df.index).year).sum()
 
 col1, col2 = st.columns(2)
