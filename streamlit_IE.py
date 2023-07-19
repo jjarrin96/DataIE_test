@@ -12,10 +12,10 @@ st.header("Reporte Prueba")
 
 
 # Datos cargados
-df_ventas = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/v_py.xlsx", sheet_name="M",engine="openpyxl")
+df_ventas = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/v_py.xlsx", sheet_name="M")
 df_ventas.set_index(df_ventas.columns[0], inplace=True)
 
-df_empresas = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/ranking.xlsx",engine="openpyxl")
+df_empresas = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/ranking.xlsx",engine="openpyxl")
 # Agregar la barra de filtro al principio de la aplicación
 selected_column = st.selectbox('Selecciona una columna', df_ventas.columns)
 
@@ -100,9 +100,9 @@ st.markdown("Texto sobre el sector")
 
 st.title("Pronósticos Corto Plazo")
 
-cp_s1 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo bajo",engine="openpyxl")
-cp_s2 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo medio",engine="openpyxl")
-cp_s3 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo alto",engine="openpyxl")
+cp_s1 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo bajo",engine="openpyxl")
+cp_s2 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo medio",engine="openpyxl")
+cp_s3 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_cp.xlsx", sheet_name="Intervalo alto",engine="openpyxl")
 
 cp_s1.set_index(cp_s1.Mes, inplace=True)
 cp_s2.set_index(cp_s2.Mes, inplace=True)
@@ -202,9 +202,9 @@ with col3:
 st.title("Pronósticos de Largo Plazo")
 
 
-lp_s1 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo bajo",engine="openpyxl")
-lp_s2 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo medio",engine="openpyxl")
-lp_s3 = pd.read_excel("https://github.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo alto",engine="openpyxl")
+lp_s1 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo bajo",engine="openpyxl")
+lp_s2 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo medio",engine="openpyxl")
+lp_s3 = pd.read_excel("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/6c3f8a77c7876121f8ffb22920cec87a746ca47c/f_lp.xlsx", sheet_name="Intervalo alto",engine="openpyxl")
 
 lp_s1.set_index(lp_s1.Mes, inplace=True)
 lp_s2.set_index(lp_s2.Mes, inplace=True)
