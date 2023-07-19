@@ -8,6 +8,32 @@ st.set_page_config(layout="wide")
 
 st.header("Reporte Prueba")
 
+dtype_dict = {
+    'Mes':str,
+    'Total Nacional':float,
+    'Agricultura, ganadería y pesca':float,
+    'Minas y canteras':float,
+    'Manufactura':float,
+    'Suministro de Electricidad Gas Vapor y Aire acondicionado':float,
+    'Distribución de Agua Alcantarillado y gestión de desechos':float,
+    'Construcción':float,
+    'Comercio':float,
+    'Transporte y almacenamiento':float,
+    'Actividades de Alojamiento':float,
+    'Información y comunicación':float,
+    'Financieras y seguros':float,
+    'Actividades inmobiliarias':float,
+    'Actividades profesionales':float,
+    'Actividades de servicios administrativos y de apoyo':float,
+    'Administración pública y defensa':float,
+    'Enseñanza':float,
+    'Actividades de atención a salud':float,
+    'Actividades entretenimiento':float,
+    'Otras actividades de servicios':float,
+    'Actividades de los hogares como empleadores domésticos':float,
+    'Actividades de Organizaciones':float
+
+}
 # Datos cargados
 df_ventas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/v_py.csv", sep=';')
 df_ventas.set_index(df_ventas.columns[0], inplace=True)
@@ -97,9 +123,9 @@ st.markdown("Texto sobre el sector")
 
 st.title("Pronósticos Corto Plazo")
 
-cp_s1 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s1.csv", sep=';')
-cp_s2 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s2.csv", sep=';')
-cp_s3 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s3.csv", sep=';')
+cp_s1 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s1.csv", sep=';',dtype=dtype_dict,thousands=',')
+cp_s2 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s2.csv", sep=';',dtype=dtype_dict,thousands=',')
+cp_s3 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/cp_s3.csv", sep=';', dtype=dtype_dict,thousands=',')
 
 cp_s1.set_index(cp_s1.Mes, inplace=True)
 cp_s2.set_index(cp_s2.Mes, inplace=True)
