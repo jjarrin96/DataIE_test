@@ -108,8 +108,26 @@ cp_s3.set_index(cp_s3.Mes, inplace=True)
 combined_df = pd.concat([cp_s1[selected_column], cp_s2[selected_column], cp_s3[selected_column]], axis=1)
 combined_df.columns = ["Escenario Pesimista", "Escenario normal", "Escenario Optimista"]
 
+meses_esp_ingles = {
+    'ene': 'Jan',
+    'feb': 'Feb',
+    'mar': 'Mar',
+    'abr': 'Apr',
+    'may': 'May',
+    'jun': 'Jun',
+    'jul': 'Jul',
+    'ago': 'Aug',
+    'sep': 'Sep',
+    'oct': 'Oct',
+    'nov': 'Nov',
+    'dic': 'Dec'
+}
+
+combined_df.index = combined_df.index.map(lambda fecha: meses_esp_ingles[fecha.split()[0]] + ' ' + fecha.split()[1])
+
 # Convertir el índice a tipo datetime
-combined_df.index = pd.to_datetime(combined_df.index)
+combined_df.index = pd.to_datetime(combined_df.index, format='%b %Y')
+
 
 # Obtener los datos antes y después de mayo de 2023
 pre_may_data = combined_df.loc[combined_df.index < pd.to_datetime("2023-05-01")]
