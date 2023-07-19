@@ -160,6 +160,15 @@ container = st.container()
 col1,col3 = st.columns(2)
 
 with col1: 
+
+    cp_s1[selected_column] = pd.to_numeric(cp_s1[selected_column], errors='coerce')
+    cp_s2[selected_column] = pd.to_numeric(cp_s2[selected_column], errors='coerce')
+    cp_s3[selected_column] = pd.to_numeric(cp_s3[selected_column], errors='coerce')
+
+    # Calcular las variaciones interanuales
+    df1_diff = cp_s1[selected_column].pct_change(periods=12) * 100
+    df2_diff = cp_s2[selected_column].pct_change(periods=12) * 100
+    df3_diff = cp_s3[selected_column].pct_change(periods=12) * 100
     # Calcular las variaciones interanuales
     df1_diff = cp_s1[selected_column].pct_change(periods=12) * 100
     df2_diff = cp_s2[selected_column].pct_change(periods=12) * 100
