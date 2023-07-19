@@ -8,6 +8,8 @@ st.set_page_config(layout="wide")
 
 st.header("Reporte Prueba")
 
+, sep=';'
+
 # Datos cargados
 df_ventas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/v_py.csv")
 df_ventas.set_index(df_ventas.columns[0], inplace=True)
