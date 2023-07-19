@@ -2,4 +2,4 @@ numpy
 altair
 pandas
 streamlit
-plotly.graph_objects
+plotly
