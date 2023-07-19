@@ -6,14 +6,13 @@ import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
 
-
 st.header("Reporte Prueba")
 
 # Datos cargados
-df_ventas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/v_py.csv")
+df_ventas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/v_py.csv")
 df_ventas.set_index(df_ventas.columns[0], inplace=True)
 
-df_empresas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/ranking.csv")
+df_empresas = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/ranking.csv")
 # Agregar la barra de filtro al principio de la aplicación
 selected_column = st.selectbox('Selecciona una columna', df_ventas.columns)
 
@@ -98,9 +97,9 @@ st.markdown("Texto sobre el sector")
 
 st.title("Pronósticos Corto Plazo")
 
-cp_s1 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/cp_s1.csv")
-cp_s2 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/cp_s2.csv")
-cp_s3 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/cp_s3.csv")
+cp_s1 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/cp_s1.csv")
+cp_s2 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/cp_s2.csv")
+cp_s3 = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/cp_s3.csv")
 
 cp_s1.set_index(cp_s1.Mes, inplace=True)
 cp_s2.set_index(cp_s2.Mes, inplace=True)
@@ -199,9 +198,9 @@ with col3:
 
 st.title("Pronósticos de Largo Plazo")
 
-lp_s1 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/lp_s1.csv")
-lp_s2 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/lp_s2.csv")
-lp_s3 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/blob/043c86f3469e5951dc25fd249e06e440990cf328/Datos/lp_s3.csv")
+lp_s1 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/lp_s1.csv")
+lp_s2 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/lp_s2.csv")
+lp_s3 = pd.csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/Datos/lp_s3.csv")
 
 lp_s1.set_index(lp_s1.Mes, inplace=True)
 lp_s2.set_index(lp_s2.Mes, inplace=True)
