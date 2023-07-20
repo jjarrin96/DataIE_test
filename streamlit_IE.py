@@ -315,7 +315,8 @@ st.title("Ventas por geografía")
 
 mapa = pd.read_csv("https://raw.githubusercontent.com/jjarrin96/DataIE_test/main/Datos/v_mapa.csv", sep = ";")
 
-st.write(mapa.head())
+st.dataframe(mapa)
+
 
 # sección empresas
 st.title("Ratios del sector")
